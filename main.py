@@ -10,8 +10,28 @@ from fastapi.responses import JSONResponse
 
 from app.routers import auth, users, files, dashboard, alerts, ai, reports
 
+from contextlib import asynccontextmanager
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Khởi tạo DB và seed dữ liệu nếu chưa có
+    from scripts.init_db import create_tables, seed_users, seed_demo_data
+    from app.database import SessionLocal
+    try:
+        create_tables()
+        db = SessionLocal()
+        try:
+            user_map = seed_users(db)
+            seed_demo_data(db, user_map)
+        finally:
+            db.close()
+    except Exception as e:
+        print(f"Lỗi khởi tạo DB: {e}")
+    yield
+
 # ── App factory ───────────────────────────────────────────────────────────────
 app = FastAPI(
+    lifespan=lifespan,
     title       = "FinanceAI API",
     description = (
         "Backend API cho Hệ thống Quản lý Tài chính Đại học.\n\n"
