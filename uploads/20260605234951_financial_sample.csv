@@ -1,0 +1,322 @@
+transaction_id,date,month,department,category,transaction_type,budget_amount,actual_amount,description
+TXN-0002,2024-01-01,2024-01,Faculty of Medicine,Equipment,expense,7383.7,5362.3,Office furniture
+TXN-0025,2024-01-01,2024-01,Student Affairs,Equipment,expense,43818.19,32157.34,Computer hardware upgrade
+TXN-0040,2024-01-01,2024-01,Faculty of Business,Salary,expense,27499.78,21684.39,Monthly staff salary
+TXN-0029,2024-01-02,2024-01,Student Affairs,Training,expense,37328.84,30557.46,Conference registration
+TXN-0007,2024-01-03,2024-01,Faculty of Medicine,Operations,expense,57842.89,41232.2,Building maintenance
+TXN-0037,2024-01-04,2024-01,Research Office,Travel,revenue,14935.59,10739.12,Travel reimbursement received
+TXN-0039,2024-01-05,2024-01,Faculty of Business,Salary,revenue,34617.58,31174.3,Consulting service income
+TXN-0034,2024-01-05,2024-01,Research Office,Equipment,revenue,118843.76,92682.66,Equipment rental income
+TXN-0032,2024-01-06,2024-01,Research Office,Salary,expense,79946.19,74676.75,Monthly staff salary
+TXN-0008,2024-01-06,2024-01,Faculty of Medicine,Operations,revenue,130640.13,105352.82,Tuition fee collection
+TXN-0028,2024-01-07,2024-01,Student Affairs,Marketing,revenue,87801.25,73081.18,Sponsorship revenue
+TXN-0021,2024-01-08,2024-01,Admissions Office,Training,expense,41645.43,30456.26,Online course subscription
+TXN-0013,2024-01-08,2024-01,Faculty of Engineering,Marketing,expense,42442.34,40223.08,Social media campaign
+TXN-0046,2024-01-09,2024-01,Faculty of Business,Travel,expense,36768.18,48530.02,Field study transport
+TXN-0045,2024-01-09,2024-01,Faculty of Business,Training,expense,20269.8,17788.51,Online course subscription
+TXN-0018,2024-01-09,2024-01,Admissions Office,Salary,expense,16861.83,11818.6,Overtime compensation
+TXN-0041,2024-01-09,2024-01,Faculty of Business,Equipment,expense,47224.52,34379.2,Office furniture
+TXN-0033,2024-01-09,2024-01,Research Office,Equipment,expense,21031.05,24872.17,Computer hardware upgrade
+TXN-0044,2024-01-10,2024-01,Faculty of Business,Marketing,expense,75419.75,82016.16,Brochure printing
+TXN-0035,2024-01-11,2024-01,Research Office,Marketing,expense,77653.2,66950.3,Open day advertising
+TXN-0012,2024-01-11,2024-01,Faculty of Engineering,Marketing,expense,9964.15,9522.52,Open day advertising
+TXN-0017,2024-01-11,2024-01,Faculty of Engineering,Operations,expense,13591.38,12881.1,Office supplies
+TXN-0023,2024-01-14,2024-01,Admissions Office,Operations,expense,40646.18,34709.6,Office supplies
+TXN-0015,2024-01-14,2024-01,Faculty of Engineering,Training,expense,61683.66,58051.04,Conference registration
+TXN-0030,2024-01-15,2024-01,Student Affairs,Travel,expense,59616.02,66594.46,Field study transport
+TXN-0038,2024-01-17,2024-01,Research Office,Operations,expense,7980.62,5769.63,Office supplies
+TXN-0014,2024-01-17,2024-01,Faculty of Engineering,Training,expense,37132.54,32059.83,Staff development workshop
+TXN-0019,2024-01-20,2024-01,Admissions Office,Equipment,expense,12980.81,11359.3,Office furniture
+TXN-0009,2024-01-20,2024-01,Faculty of Engineering,Salary,expense,55263.14,49543.94,Monthly staff salary
+TXN-0006,2024-01-20,2024-01,Faculty of Medicine,Travel,expense,39456.87,61163.67,Field study transport
+TXN-0024,2024-01-22,2024-01,Student Affairs,Salary,revenue,114513.45,102279.17,Consulting service income
+TXN-0010,2024-01-23,2024-01,Faculty of Engineering,Salary,expense,45060.49,34631.11,Overtime compensation
+TXN-0001,2024-01-24,2024-01,Faculty of Medicine,Salary,expense,25627.2,19540.71,Overtime compensation
+TXN-0027,2024-01-24,2024-01,Student Affairs,Marketing,expense,22850.35,20275.43,Social media campaign
+TXN-0022,2024-01-25,2024-01,Admissions Office,Travel,expense,47551.77,34334.85,Domestic conference travel
+TXN-0031,2024-01-26,2024-01,Student Affairs,Operations,expense,25890.89,19934.58,Building maintenance
+TXN-0005,2024-01-26,2024-01,Faculty of Medicine,Travel,expense,33494.55,26812.86,International research trip
+TXN-0011,2024-01-26,2024-01,Faculty of Engineering,Equipment,expense,68213.89,62571.24,Lab equipment purchase
+TXN-0003,2024-01-26,2024-01,Faculty of Medicine,Marketing,expense,57599.37,47085.5,Brochure printing
+TXN-0042,2024-01-27,2024-01,Faculty of Business,Equipment,expense,31175.66,22423.45,Computer hardware upgrade
+TXN-0026,2024-01-28,2024-01,Student Affairs,Equipment,expense,22258.6,28288.14,Lab equipment purchase
+TXN-0016,2024-01-28,2024-01,Faculty of Engineering,Travel,expense,49691.63,41296.43,Field study transport
+TXN-0047,2024-01-29,2024-01,Faculty of Business,Operations,expense,46376.03,49916.16,Office supplies
+TXN-0020,2024-01-30,2024-01,Admissions Office,Marketing,expense,62188.31,52923.88,Open day advertising
+TXN-0043,2024-01-30,2024-01,Faculty of Business,Marketing,expense,79042.48,105599.68,Brochure printing
+TXN-0036,2024-01-31,2024-01,Research Office,Training,expense,40759.14,39023.96,Staff development workshop
+TXN-0004,2024-01-31,2024-01,Faculty of Medicine,Training,revenue,28150.6,23036.54,Training programme fee
+TXN-0072,2024-02-01,2024-02,Admissions Office,Marketing,expense,20512.58,16771.91,Open day advertising
+TXN-0063,2024-02-01,2024-02,Faculty of Engineering,Training,expense,76399.97,58504.29,Staff development workshop
+TXN-0055,2024-02-02,2024-02,Faculty of Medicine,Travel,revenue,21724.55,21110.01,Travel reimbursement received
+TXN-0084,2024-02-03,2024-02,Student Affairs,Travel,revenue,87060.22,61943.29,Travel reimbursement received
+TXN-0103,2024-02-03,2024-02,Faculty of Business,Training,expense,56702.84,65255.71,Online course subscription
+TXN-0099,2024-02-04,2024-02,Faculty of Business,Equipment,expense,52208.43,65103.59,Lab equipment purchase
+TXN-0056,2024-02-04,2024-02,Faculty of Medicine,Travel,expense,37592.28,33983.14,Field study transport
+TXN-0075,2024-02-05,2024-02,Admissions Office,Training,expense,34164.29,30313.45,Online course subscription
+TXN-0070,2024-02-05,2024-02,Admissions Office,Equipment,expense,58515.86,44803.15,Lab equipment purchase
+TXN-0102,2024-02-06,2024-02,Faculty of Business,Marketing,expense,20826.89,18430.13,Social media campaign
+TXN-0076,2024-02-06,2024-02,Admissions Office,Travel,revenue,90824.45,108990.65,Travel reimbursement received
+TXN-0093,2024-02-07,2024-02,Research Office,Travel,expense,39030.89,30672.6,Field study transport
+TXN-0082,2024-02-07,2024-02,Student Affairs,Marketing,expense,28396.79,25263.41,Open day advertising
+TXN-0053,2024-02-07,2024-02,Faculty of Medicine,Training,expense,66540.23,62812.01,Conference registration
+TXN-0078,2024-02-08,2024-02,Student Affairs,Salary,expense,11142.97,7860.56,Part-time lecturer payment
+TXN-0069,2024-02-08,2024-02,Admissions Office,Salary,expense,23542.98,20683.57,Overtime compensation
+TXN-0087,2024-02-09,2024-02,Research Office,Salary,expense,66930.09,57954.29,Monthly staff salary
+TXN-0095,2024-02-10,2024-02,Research Office,Operations,expense,78245.53,66266.01,Utility bills
+TXN-0097,2024-02-10,2024-02,Faculty of Business,Salary,expense,14470.96,13648.56,Overtime compensation
+TXN-0088,2024-02-11,2024-02,Research Office,Salary,revenue,40360.2,33503.74,Consulting service income
+TXN-0057,2024-02-12,2024-02,Faculty of Medicine,Operations,revenue,32561.42,23197.67,Grant funding received
+TXN-0098,2024-02-13,2024-02,Faculty of Business,Salary,expense,38035.16,52464.64,Monthly staff salary
+TXN-0054,2024-02-13,2024-02,Faculty of Medicine,Training,expense,25895.23,18630.01,Conference registration
+TXN-0074,2024-02-14,2024-02,Admissions Office,Training,expense,60097.55,55527.92,Online course subscription
+TXN-0104,2024-02-14,2024-02,Faculty of Business,Travel,revenue,119235.06,104332.61,Travel reimbursement received
+TXN-0059,2024-02-14,2024-02,Faculty of Engineering,Salary,expense,55016.97,43536.65,Monthly staff salary
+TXN-0066,2024-02-15,2024-02,Faculty of Engineering,Operations,expense,65308.24,58441.42,Utility bills
+TXN-0100,2024-02-15,2024-02,Faculty of Business,Equipment,expense,36213.05,31393.65,Computer hardware upgrade
+TXN-0068,2024-02-15,2024-02,Admissions Office,Salary,revenue,84441.43,80322.23,Consulting service income
+TXN-0061,2024-02-15,2024-02,Faculty of Engineering,Equipment,expense,20763.7,19102.86,Computer hardware upgrade
+TXN-0094,2024-02-16,2024-02,Research Office,Travel,expense,60716.08,58666.65,Field study transport
+TXN-0062,2024-02-17,2024-02,Faculty of Engineering,Marketing,expense,64530.15,62513.77,Brochure printing
+TXN-0092,2024-02-18,2024-02,Research Office,Training,expense,48616.67,40474.01,Conference registration
+TXN-0096,2024-02-18,2024-02,Research Office,Operations,expense,18458.12,12993.81,Utility bills
+TXN-0071,2024-02-18,2024-02,Admissions Office,Equipment,expense,33727.65,25052.41,Computer hardware upgrade
+TXN-0060,2024-02-18,2024-02,Faculty of Engineering,Salary,expense,33435.9,30409.2,Part-time lecturer payment
+TXN-0064,2024-02-19,2024-02,Faculty of Engineering,Training,expense,78795.2,68642.97,Conference registration
+TXN-0081,2024-02-19,2024-02,Student Affairs,Marketing,expense,50543.56,67564.38,Social media campaign
+TXN-0083,2024-02-20,2024-02,Student Affairs,Training,expense,67292.87,51680.78,Conference registration
+TXN-0067,2024-02-20,2024-02,Faculty of Engineering,Operations,expense,39848.24,33819.88,Building maintenance
+TXN-0105,2024-02-20,2024-02,Faculty of Business,Operations,expense,53572.6,105607.6,Building maintenance
+TXN-0049,2024-02-20,2024-02,Faculty of Medicine,Equipment,expense,23714.73,17282.87,Computer hardware upgrade
+TXN-0091,2024-02-23,2024-02,Research Office,Marketing,expense,40706.98,75238.73,Brochure printing
+TXN-0085,2024-02-23,2024-02,Student Affairs,Operations,expense,36504.41,30563.55,Building maintenance
+TXN-0058,2024-02-24,2024-02,Faculty of Medicine,Operations,expense,76165.59,72952.61,Utility bills
+TXN-0090,2024-02-25,2024-02,Research Office,Marketing,expense,43747.04,32963.21,Open day advertising
+TXN-0086,2024-02-25,2024-02,Student Affairs,Operations,expense,18210.27,15407.51,Office supplies
+TXN-0065,2024-02-25,2024-02,Faculty of Engineering,Travel,expense,33798.39,43622.5,Domestic conference travel
+TXN-0080,2024-02-25,2024-02,Student Affairs,Equipment,expense,22890.87,31628.66,Computer hardware upgrade
+TXN-0101,2024-02-25,2024-02,Faculty of Business,Marketing,expense,49139.39,258198.47,Social media campaign
+TXN-0077,2024-02-25,2024-02,Admissions Office,Operations,expense,29551.45,24448.38,Building maintenance
+TXN-0051,2024-02-26,2024-02,Faculty of Medicine,Marketing,expense,60242.34,47772.89,Open day advertising
+TXN-0079,2024-02-27,2024-02,Student Affairs,Salary,expense,63592.48,56119.81,Monthly staff salary
+TXN-0052,2024-02-27,2024-02,Faculty of Medicine,Marketing,expense,16939.84,120000.58,Social media campaign
+TXN-0073,2024-02-28,2024-02,Admissions Office,Marketing,revenue,116011.21,136094.56,Sponsorship revenue
+TXN-0048,2024-02-29,2024-02,Faculty of Medicine,Salary,expense,67594.63,73989.48,Monthly staff salary
+TXN-0050,2024-02-29,2024-02,Faculty of Medicine,Equipment,expense,74432.29,57036.46,Lab equipment purchase
+TXN-0089,2024-02-29,2024-02,Research Office,Equipment,expense,29376.06,24573.48,Computer hardware upgrade
+TXN-0152,2024-03-01,2024-03,Research Office,Operations,revenue,83331.24,112768.56,Grant funding received
+TXN-0155,2024-03-02,2024-03,Faculty of Business,Equipment,expense,73156.38,64706.3,Lab equipment purchase
+TXN-0107,2024-03-03,2024-03,Faculty of Medicine,Salary,expense,49852.75,47312.17,Monthly staff salary
+TXN-0137,2024-03-03,2024-03,Student Affairs,Equipment,expense,12287.29,35219.47,Lab equipment purchase
+TXN-0156,2024-03-03,2024-03,Faculty of Business,Marketing,revenue,66809.67,48786.38,Sponsorship revenue
+TXN-0110,2024-03-04,2024-03,Faculty of Medicine,Training,expense,41879.44,30385.54,Conference registration
+TXN-0144,2024-03-05,2024-03,Student Affairs,Operations,expense,52655.29,43703.62,Utility bills
+TXN-0122,2024-03-05,2024-03,Faculty of Engineering,Operations,expense,54776.66,50931.85,Utility bills
+TXN-0109,2024-03-06,2024-03,Faculty of Medicine,Marketing,revenue,30402.66,25699.67,Sponsorship revenue
+TXN-0150,2024-03-07,2024-03,Research Office,Training,expense,30013.19,29318.98,Conference registration
+TXN-0113,2024-03-07,2024-03,Faculty of Medicine,Operations,expense,19068.69,15279.71,Utility bills
+TXN-0148,2024-03-09,2024-03,Research Office,Marketing,expense,56426.02,48100.39,Brochure printing
+TXN-0124,2024-03-11,2024-03,Admissions Office,Salary,expense,15811.66,60312.94,Part-time lecturer payment
+TXN-0160,2024-03-12,2024-03,Faculty of Business,Travel,revenue,62815.88,56803.87,Travel reimbursement received
+TXN-0145,2024-03-12,2024-03,Research Office,Salary,revenue,49132.86,66847.26,Consulting service income
+TXN-0125,2024-03-13,2024-03,Admissions Office,Salary,expense,34811.25,25150.72,Overtime compensation
+TXN-0142,2024-03-13,2024-03,Student Affairs,Travel,expense,45242.92,37431.28,Field study transport
+TXN-0157,2024-03-13,2024-03,Faculty of Business,Marketing,revenue,51706.21,65589.9,Sponsorship revenue
+TXN-0159,2024-03-14,2024-03,Faculty of Business,Training,revenue,109521.79,83259.17,Training programme fee
+TXN-0128,2024-03-14,2024-03,Admissions Office,Marketing,expense,57050.09,75799.61,Brochure printing
+TXN-0146,2024-03-14,2024-03,Research Office,Equipment,expense,59494.94,56396.2,Office furniture
+TXN-0119,2024-03-15,2024-03,Faculty of Engineering,Training,expense,27391.69,23675.8,Staff development workshop
+TXN-0115,2024-03-15,2024-03,Faculty of Engineering,Salary,expense,28306.26,19922.76,Monthly staff salary
+TXN-0111,2024-03-15,2024-03,Faculty of Medicine,Training,revenue,52821.53,47234.52,Training programme fee
+TXN-0106,2024-03-16,2024-03,Faculty of Medicine,Salary,expense,40152.35,31525.44,Overtime compensation
+TXN-0138,2024-03-17,2024-03,Student Affairs,Marketing,expense,36162.73,27347.07,Brochure printing
+TXN-0108,2024-03-19,2024-03,Faculty of Medicine,Equipment,revenue,126214.0,108677.29,Equipment rental income
+TXN-0114,2024-03-21,2024-03,Faculty of Medicine,Operations,expense,14825.99,11573.88,Utility bills
+TXN-0126,2024-03-21,2024-03,Admissions Office,Equipment,expense,71557.9,59867.15,Lab equipment purchase
+TXN-0149,2024-03-21,2024-03,Research Office,Marketing,expense,14161.98,13276.14,Open day advertising
+TXN-0112,2024-03-22,2024-03,Faculty of Medicine,Travel,expense,29245.53,28416.47,Domestic conference travel
+TXN-0130,2024-03-22,2024-03,Admissions Office,Travel,expense,23062.23,27937.64,International research trip
+TXN-0121,2024-03-23,2024-03,Faculty of Engineering,Travel,expense,33722.81,31688.77,International research trip
+TXN-0133,2024-03-23,2024-03,Admissions Office,Operations,expense,79953.02,94622.6,Building maintenance
+TXN-0120,2024-03-23,2024-03,Faculty of Engineering,Travel,expense,46393.81,39534.97,Domestic conference travel
+TXN-0139,2024-03-24,2024-03,Student Affairs,Marketing,expense,25439.55,18979.75,Brochure printing
+TXN-0153,2024-03-24,2024-03,Faculty of Business,Salary,revenue,39500.08,89290.47,Consulting service income
+TXN-0161,2024-03-26,2024-03,Faculty of Business,Travel,revenue,104589.05,112943.36,Travel reimbursement received
+TXN-0141,2024-03-26,2024-03,Student Affairs,Training,expense,55580.47,45091.06,Staff development workshop
+TXN-0135,2024-03-26,2024-03,Student Affairs,Salary,expense,42254.55,40275.49,Overtime compensation
+TXN-0116,2024-03-27,2024-03,Faculty of Engineering,Equipment,expense,16547.83,15904.83,Computer hardware upgrade
+TXN-0118,2024-03-27,2024-03,Faculty of Engineering,Marketing,expense,62950.63,59125.46,Brochure printing
+TXN-0136,2024-03-27,2024-03,Student Affairs,Equipment,expense,19259.9,14833.5,Office furniture
+TXN-0162,2024-03-28,2024-03,Faculty of Business,Operations,expense,48984.88,41992.0,Building maintenance
+TXN-0140,2024-03-28,2024-03,Student Affairs,Training,revenue,72908.05,52572.82,Training programme fee
+TXN-0147,2024-03-28,2024-03,Research Office,Equipment,revenue,45562.32,40699.84,Equipment rental income
+TXN-0127,2024-03-28,2024-03,Admissions Office,Equipment,expense,26553.43,36973.48,Office furniture
+TXN-0117,2024-03-28,2024-03,Faculty of Engineering,Marketing,revenue,40340.98,34465.49,Sponsorship revenue
+TXN-0129,2024-03-28,2024-03,Admissions Office,Training,expense,35903.88,31986.91,Conference registration
+TXN-0151,2024-03-28,2024-03,Research Office,Travel,revenue,38784.81,35558.81,Travel reimbursement received
+TXN-0132,2024-03-28,2024-03,Admissions Office,Operations,revenue,48377.37,46895.48,Tuition fee collection
+TXN-0158,2024-03-29,2024-03,Faculty of Business,Training,expense,50407.01,36684.71,Conference registration
+TXN-0134,2024-03-30,2024-03,Student Affairs,Salary,expense,67252.82,90977.84,Monthly staff salary
+TXN-0123,2024-03-30,2024-03,Faculty of Engineering,Operations,expense,49263.53,46480.93,Office supplies
+TXN-0143,2024-03-30,2024-03,Student Affairs,Travel,revenue,141342.32,188896.39,Travel reimbursement received
+TXN-0154,2024-03-31,2024-03,Faculty of Business,Salary,expense,38620.64,30949.46,Monthly staff salary
+TXN-0131,2024-03-31,2024-03,Admissions Office,Travel,expense,65347.48,62232.93,International research trip
+TXN-0171,2024-04-01,2024-04,Faculty of Medicine,Operations,expense,44520.06,35008.68,Utility bills
+TXN-0209,2024-04-02,2024-04,Faculty of Business,Salary,expense,54282.83,39573.59,Monthly staff salary
+TXN-0200,2024-04-03,2024-04,Research Office,Equipment,revenue,139918.43,114197.38,Equipment rental income
+TXN-0179,2024-04-03,2024-04,Faculty of Engineering,Operations,expense,15983.32,12071.18,Office supplies
+TXN-0173,2024-04-03,2024-04,Faculty of Engineering,Equipment,expense,33515.56,30064.39,Computer hardware upgrade
+TXN-0163,2024-04-04,2024-04,Faculty of Medicine,Salary,revenue,109553.8,106393.35,Consulting service income
+TXN-0203,2024-04-04,2024-04,Research Office,Training,expense,21174.11,15708.34,Online course subscription
+TXN-0204,2024-04-04,2024-04,Research Office,Travel,expense,14138.63,10840.98,Domestic conference travel
+TXN-0201,2024-04-05,2024-04,Research Office,Equipment,expense,7114.07,6834.0,Lab equipment purchase
+TXN-0214,2024-04-06,2024-04,Faculty of Business,Travel,revenue,68357.95,55507.07,Travel reimbursement received
+TXN-0211,2024-04-07,2024-04,Faculty of Business,Equipment,expense,65862.33,47267.3,Computer hardware upgrade
+TXN-0191,2024-04-07,2024-04,Student Affairs,Equipment,expense,6367.29,5007.76,Computer hardware upgrade
+TXN-0212,2024-04-09,2024-04,Faculty of Business,Marketing,revenue,133439.61,105199.36,Sponsorship revenue
+TXN-0213,2024-04-09,2024-04,Faculty of Business,Training,revenue,32710.0,26166.46,Training programme fee
+TXN-0205,2024-04-10,2024-04,Research Office,Travel,revenue,77475.24,65861.32,Travel reimbursement received
+TXN-0194,2024-04-10,2024-04,Student Affairs,Training,expense,8276.93,6638.13,Conference registration
+TXN-0216,2024-04-10,2024-04,Faculty of Business,Operations,revenue,31166.19,36301.5,Tuition fee collection
+TXN-0208,2024-04-12,2024-04,Faculty of Business,Salary,expense,34016.1,27366.79,Monthly staff salary
+TXN-0206,2024-04-12,2024-04,Research Office,Operations,expense,31461.2,27049.89,Office supplies
+TXN-0181,2024-04-12,2024-04,Admissions Office,Equipment,expense,10121.47,8338.25,Lab equipment purchase
+TXN-0164,2024-04-12,2024-04,Faculty of Medicine,Salary,expense,20955.41,18522.2,Overtime compensation
+TXN-0195,2024-04-12,2024-04,Student Affairs,Travel,expense,22937.64,22257.93,Domestic conference travel
+TXN-0175,2024-04-15,2024-04,Faculty of Engineering,Marketing,expense,36327.05,42272.66,Open day advertising
+TXN-0210,2024-04-16,2024-04,Faculty of Business,Equipment,expense,66013.16,49445.5,Office furniture
+TXN-0169,2024-04-16,2024-04,Faculty of Medicine,Travel,revenue,27559.09,29723.95,Travel reimbursement received
+TXN-0172,2024-04-16,2024-04,Faculty of Engineering,Salary,expense,20842.55,15390.68,Monthly staff salary
+TXN-0196,2024-04-17,2024-04,Student Affairs,Travel,expense,47781.45,39341.68,Field study transport
+TXN-0176,2024-04-17,2024-04,Faculty of Engineering,Marketing,revenue,138366.61,100271.01,Sponsorship revenue
+TXN-0174,2024-04-19,2024-04,Faculty of Engineering,Equipment,expense,60653.1,69357.91,Computer hardware upgrade
+TXN-0185,2024-04-20,2024-04,Admissions Office,Training,expense,17941.92,13803.94,Conference registration
+TXN-0168,2024-04-20,2024-04,Faculty of Medicine,Training,expense,39023.43,29036.34,Conference registration
+TXN-0182,2024-04-20,2024-04,Admissions Office,Equipment,expense,28280.59,25210.91,Lab equipment purchase
+TXN-0165,2024-04-20,2024-04,Faculty of Medicine,Equipment,revenue,88244.5,81716.35,Equipment rental income
+TXN-0215,2024-04-20,2024-04,Faculty of Business,Operations,expense,32551.02,102958.07,Building maintenance
+TXN-0177,2024-04-21,2024-04,Faculty of Engineering,Training,expense,28270.59,22476.92,Conference registration
+TXN-0183,2024-04-21,2024-04,Admissions Office,Marketing,expense,46573.73,42927.43,Open day advertising
+TXN-0190,2024-04-21,2024-04,Student Affairs,Salary,expense,57712.32,55703.38,Monthly staff salary
+TXN-0188,2024-04-21,2024-04,Admissions Office,Operations,expense,16278.0,11766.07,Building maintenance
+TXN-0170,2024-04-22,2024-04,Faculty of Medicine,Operations,expense,21167.67,17854.02,Office supplies
+TXN-0184,2024-04-23,2024-04,Admissions Office,Marketing,expense,50375.44,42334.66,Brochure printing
+TXN-0167,2024-04-24,2024-04,Faculty of Medicine,Marketing,expense,54300.85,39068.59,Social media campaign
+TXN-0198,2024-04-25,2024-04,Student Affairs,Operations,expense,75072.02,67504.18,Utility bills
+TXN-0186,2024-04-26,2024-04,Admissions Office,Travel,expense,73845.26,59702.17,Domestic conference travel
+TXN-0189,2024-04-27,2024-04,Student Affairs,Salary,expense,58162.55,42093.48,Part-time lecturer payment
+TXN-0178,2024-04-27,2024-04,Faculty of Engineering,Travel,expense,19542.78,17927.45,Field study transport
+TXN-0193,2024-04-27,2024-04,Student Affairs,Marketing,expense,70729.46,61750.27,Social media campaign
+TXN-0192,2024-04-27,2024-04,Student Affairs,Equipment,expense,15317.4,11053.13,Office furniture
+TXN-0199,2024-04-27,2024-04,Research Office,Salary,expense,72897.97,54036.18,Monthly staff salary
+TXN-0166,2024-04-28,2024-04,Faculty of Medicine,Marketing,expense,25495.28,23289.29,Social media campaign
+TXN-0180,2024-04-28,2024-04,Admissions Office,Salary,revenue,96052.57,79714.69,Consulting service income
+TXN-0197,2024-04-28,2024-04,Student Affairs,Operations,revenue,123449.23,140423.64,Tuition fee collection
+TXN-0207,2024-04-28,2024-04,Research Office,Operations,expense,44454.46,37432.96,Building maintenance
+TXN-0202,2024-04-29,2024-04,Research Office,Marketing,expense,67232.12,87195.87,Social media campaign
+TXN-0187,2024-04-30,2024-04,Admissions Office,Operations,expense,12087.95,10757.63,Office supplies
+TXN-0221,2024-05-01,2024-05,Faculty of Medicine,Marketing,expense,15327.13,12303.79,Social media campaign
+TXN-0262,2024-05-02,2024-05,Faculty of Business,Salary,expense,22946.15,16388.47,Monthly staff salary
+TXN-0254,2024-05-05,2024-05,Research Office,Marketing,expense,50860.85,42318.75,Open day advertising
+TXN-0247,2024-05-05,2024-05,Student Affairs,Training,expense,8397.75,6200.65,Online course subscription
+TXN-0268,2024-05-06,2024-05,Faculty of Business,Operations,revenue,24458.99,20574.4,Tuition fee collection
+TXN-0253,2024-05-07,2024-05,Research Office,Equipment,expense,76115.39,88278.05,Office furniture
+TXN-0222,2024-05-07,2024-05,Faculty of Medicine,Training,expense,34024.05,29167.74,Online course subscription
+TXN-0258,2024-05-09,2024-05,Research Office,Travel,expense,56767.99,47510.32,Field study transport
+TXN-0230,2024-05-10,2024-05,Faculty of Engineering,Marketing,revenue,23709.78,19935.23,Sponsorship revenue
+TXN-0219,2024-05-12,2024-05,Faculty of Medicine,Equipment,revenue,25703.02,162403.35,Equipment rental income
+TXN-0243,2024-05-12,2024-05,Student Affairs,Equipment,expense,5613.31,6413.57,Computer hardware upgrade
+TXN-0245,2024-05-13,2024-05,Student Affairs,Marketing,revenue,45559.5,44509.14,Sponsorship revenue
+TXN-0265,2024-05-14,2024-05,Faculty of Business,Marketing,expense,45136.42,40734.4,Social media campaign
+TXN-0239,2024-05-14,2024-05,Admissions Office,Training,expense,23593.92,17155.31,Conference registration
+TXN-0263,2024-05-14,2024-05,Faculty of Business,Equipment,expense,58801.85,123625.65,Lab equipment purchase
+TXN-0255,2024-05-15,2024-05,Research Office,Marketing,expense,47066.51,46100.44,Social media campaign
+TXN-0241,2024-05-15,2024-05,Admissions Office,Operations,expense,43604.36,36813.71,Office supplies
+TXN-0238,2024-05-15,2024-05,Admissions Office,Marketing,expense,34903.75,31866.64,Social media campaign
+TXN-0223,2024-05-15,2024-05,Faculty of Medicine,Travel,expense,79897.16,85962.81,Field study transport
+TXN-0236,2024-05-15,2024-05,Admissions Office,Equipment,expense,65551.2,53339.4,Lab equipment purchase
+TXN-0235,2024-05-16,2024-05,Admissions Office,Equipment,expense,7271.44,6900.01,Computer hardware upgrade
+TXN-0218,2024-05-17,2024-05,Faculty of Medicine,Salary,revenue,44810.53,290322.59,Consulting service income
+TXN-0225,2024-05-17,2024-05,Faculty of Medicine,Operations,revenue,128447.5,115513.68,Tuition fee collection
+TXN-0244,2024-05-17,2024-05,Student Affairs,Equipment,expense,8836.83,7575.89,Computer hardware upgrade
+TXN-0246,2024-05-17,2024-05,Student Affairs,Marketing,expense,79009.07,67647.01,Open day advertising
+TXN-0267,2024-05-18,2024-05,Faculty of Business,Travel,expense,47597.14,34748.02,Field study transport
+TXN-0226,2024-05-18,2024-05,Faculty of Medicine,Operations,expense,78884.94,72714.43,Building maintenance
+TXN-0224,2024-05-18,2024-05,Faculty of Medicine,Travel,revenue,122524.42,118961.06,Travel reimbursement received
+TXN-0229,2024-05-19,2024-05,Faculty of Engineering,Equipment,expense,56008.17,44608.5,Office furniture
+TXN-0261,2024-05-20,2024-05,Faculty of Business,Salary,expense,67096.38,52061.23,Monthly staff salary
+TXN-0256,2024-05-20,2024-05,Research Office,Training,expense,55690.14,52512.64,Online course subscription
+TXN-0217,2024-05-20,2024-05,Faculty of Medicine,Salary,expense,36958.71,56141.68,Part-time lecturer payment
+TXN-0264,2024-05-21,2024-05,Faculty of Business,Marketing,expense,19959.2,19358.35,Social media campaign
+TXN-0232,2024-05-21,2024-05,Faculty of Engineering,Travel,expense,52629.28,60838.85,Field study transport
+TXN-0228,2024-05-21,2024-05,Faculty of Engineering,Salary,expense,35809.63,29172.01,Part-time lecturer payment
+TXN-0242,2024-05-22,2024-05,Student Affairs,Salary,expense,31467.13,22472.29,Overtime compensation
+TXN-0251,2024-05-24,2024-05,Student Affairs,Operations,expense,24914.78,22013.84,Utility bills
+TXN-0260,2024-05-24,2024-05,Research Office,Operations,expense,26572.28,23913.98,Building maintenance
+TXN-0227,2024-05-24,2024-05,Faculty of Engineering,Salary,expense,78725.9,37208.63,Overtime compensation
+TXN-0248,2024-05-24,2024-05,Student Affairs,Training,expense,43662.93,34573.64,Conference registration
+TXN-0240,2024-05-25,2024-05,Admissions Office,Travel,revenue,135835.07,126024.22,Travel reimbursement received
+TXN-0269,2024-05-25,2024-05,Faculty of Business,Operations,expense,53621.4,62629.22,Office supplies
+TXN-0234,2024-05-25,2024-05,Admissions Office,Salary,revenue,9114.16,6495.93,Consulting service income
+TXN-0220,2024-05-25,2024-05,Faculty of Medicine,Marketing,revenue,9695.87,7203.67,Sponsorship revenue
+TXN-0257,2024-05-25,2024-05,Research Office,Training,expense,76800.3,59759.99,Online course subscription
+TXN-0233,2024-05-27,2024-05,Faculty of Engineering,Operations,expense,48548.49,36311.17,Building maintenance
+TXN-0252,2024-05-27,2024-05,Research Office,Salary,expense,17788.4,15584.9,Monthly staff salary
+TXN-0249,2024-05-27,2024-05,Student Affairs,Travel,expense,43048.62,36277.93,International research trip
+TXN-0231,2024-05-28,2024-05,Faculty of Engineering,Training,expense,75105.34,57315.26,Online course subscription
+TXN-0250,2024-05-28,2024-05,Student Affairs,Travel,expense,29842.97,21805.94,Field study transport
+TXN-0237,2024-05-28,2024-05,Admissions Office,Marketing,expense,20301.73,17659.76,Open day advertising
+TXN-0266,2024-05-29,2024-05,Faculty of Business,Training,revenue,10269.28,9592.91,Training programme fee
+TXN-0259,2024-05-31,2024-05,Research Office,Travel,expense,48010.76,40909.65,International research trip
+TXN-0279,2024-06-01,2024-06,Faculty of Engineering,Salary,expense,39259.89,28116.61,Overtime compensation
+TXN-0294,2024-06-02,2024-06,Admissions Office,Travel,expense,53502.94,169671.19,Domestic conference travel
+TXN-0289,2024-06-02,2024-06,Admissions Office,Equipment,expense,70719.37,69021.73,Computer hardware upgrade
+TXN-0285,2024-06-02,2024-06,Faculty of Engineering,Travel,revenue,40889.25,32585.65,Travel reimbursement received
+TXN-0280,2024-06-02,2024-06,Faculty of Engineering,Equipment,expense,5226.16,6262.48,Office furniture
+TXN-0316,2024-06-02,2024-06,Faculty of Business,Equipment,revenue,104950.03,75769.7,Equipment rental income
+TXN-0276,2024-06-03,2024-06,Faculty of Medicine,Travel,revenue,103649.58,89846.36,Travel reimbursement received
+TXN-0308,2024-06-03,2024-06,Research Office,Marketing,expense,23072.66,20154.86,Brochure printing
+TXN-0292,2024-06-05,2024-06,Admissions Office,Training,expense,18790.92,15983.93,Conference registration
+TXN-0278,2024-06-05,2024-06,Faculty of Engineering,Salary,expense,20405.11,25070.36,Part-time lecturer payment
+TXN-0321,2024-06-06,2024-06,Faculty of Business,Operations,expense,75722.02,62434.78,Utility bills
+TXN-0287,2024-06-07,2024-06,Faculty of Engineering,Operations,expense,55401.77,89712.25,Office supplies
+TXN-0293,2024-06-09,2024-06,Admissions Office,Travel,revenue,86545.96,84034.41,Travel reimbursement received
+TXN-0312,2024-06-09,2024-06,Research Office,Travel,revenue,146206.76,138975.6,Travel reimbursement received
+TXN-0314,2024-06-10,2024-06,Faculty of Business,Salary,expense,20536.86,15204.95,Monthly staff salary
+TXN-0306,2024-06-10,2024-06,Research Office,Equipment,expense,6179.88,250608.19,Office furniture
+TXN-0320,2024-06-12,2024-06,Faculty of Business,Travel,expense,16566.57,14897.81,International research trip
+TXN-0298,2024-06-12,2024-06,Student Affairs,Equipment,expense,63163.54,50946.78,Computer hardware upgrade
+TXN-0299,2024-06-12,2024-06,Student Affairs,Marketing,expense,65211.25,58838.53,Social media campaign
+TXN-0315,2024-06-13,2024-06,Faculty of Business,Salary,expense,23035.41,21508.21,Part-time lecturer payment
+TXN-0270,2024-06-13,2024-06,Faculty of Medicine,Salary,expense,69210.99,65831.55,Monthly staff salary
+TXN-0297,2024-06-13,2024-06,Student Affairs,Salary,revenue,22010.85,21568.0,Consulting service income
+TXN-0284,2024-06-14,2024-06,Faculty of Engineering,Training,expense,21701.77,25053.11,Conference registration
+TXN-0291,2024-06-14,2024-06,Admissions Office,Marketing,revenue,141530.03,125675.26,Sponsorship revenue
+TXN-0318,2024-06-14,2024-06,Faculty of Business,Training,expense,25499.53,24936.6,Online course subscription
+TXN-0271,2024-06-15,2024-06,Faculty of Medicine,Equipment,expense,15545.89,12290.71,Lab equipment purchase
+TXN-0302,2024-06-15,2024-06,Student Affairs,Training,revenue,53946.82,49293.42,Training programme fee
+TXN-0274,2024-06-16,2024-06,Faculty of Medicine,Training,expense,52903.35,50965.92,Staff development workshop
+TXN-0290,2024-06-16,2024-06,Admissions Office,Equipment,expense,49375.03,44726.83,Office furniture
+TXN-0283,2024-06-17,2024-06,Faculty of Engineering,Marketing,revenue,131810.29,97175.44,Sponsorship revenue
+TXN-0310,2024-06-18,2024-06,Research Office,Training,revenue,16689.45,133382.77,Training programme fee
+TXN-0295,2024-06-18,2024-06,Admissions Office,Operations,expense,50372.71,67077.7,Office supplies
+TXN-0300,2024-06-19,2024-06,Student Affairs,Marketing,expense,8428.66,154116.06,Open day advertising
+TXN-0311,2024-06-19,2024-06,Research Office,Travel,expense,5708.76,4270.08,International research trip
+TXN-0288,2024-06-20,2024-06,Admissions Office,Salary,expense,79511.26,60871.06,Overtime compensation
+TXN-0286,2024-06-20,2024-06,Faculty of Engineering,Travel,revenue,65789.89,70642.63,Travel reimbursement received
+TXN-0301,2024-06-21,2024-06,Student Affairs,Training,expense,19714.38,15069.77,Conference registration
+TXN-0303,2024-06-21,2024-06,Student Affairs,Travel,expense,31413.21,23220.28,Field study transport
+TXN-0309,2024-06-22,2024-06,Research Office,Training,revenue,71554.67,54961.01,Training programme fee
+TXN-0272,2024-06-22,2024-06,Faculty of Medicine,Marketing,revenue,48782.15,62382.09,Sponsorship revenue
+TXN-0282,2024-06-22,2024-06,Faculty of Engineering,Marketing,expense,71850.02,59318.69,Social media campaign
+TXN-0319,2024-06-23,2024-06,Faculty of Business,Training,expense,48940.63,39466.72,Staff development workshop
+TXN-0273,2024-06-25,2024-06,Faculty of Medicine,Marketing,expense,28010.48,22786.99,Open day advertising
+TXN-0275,2024-06-25,2024-06,Faculty of Medicine,Training,expense,61080.11,53115.69,Online course subscription
+TXN-0317,2024-06-25,2024-06,Faculty of Business,Marketing,expense,67900.6,54005.83,Brochure printing
+TXN-0281,2024-06-25,2024-06,Faculty of Engineering,Equipment,revenue,15007.78,17905.83,Equipment rental income
+TXN-0304,2024-06-27,2024-06,Student Affairs,Operations,expense,67930.14,42008.99,Utility bills
+TXN-0277,2024-06-28,2024-06,Faculty of Medicine,Operations,expense,46073.69,38772.69,Building maintenance
+TXN-0307,2024-06-30,2024-06,Research Office,Equipment,expense,65986.79,58644.39,Lab equipment purchase
+TXN-0296,2024-06-30,2024-06,Admissions Office,Operations,expense,20666.68,19715.38,Utility bills
+TXN-0313,2024-06-30,2024-06,Research Office,Operations,revenue,104242.17,81152.99,Grant funding received
+TXN-0305,2024-06-30,2024-06,Research Office,Salary,expense,16327.22,42531.93,Overtime compensation
