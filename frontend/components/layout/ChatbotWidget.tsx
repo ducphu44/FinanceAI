@@ -201,7 +201,7 @@ export default function ChatbotWidget() {
                 onKeyDown={handleKeyDown}
               />
               <button 
-                onClick={handleSendMessage}
+                onClick={() => handleSendMessage()}
                 disabled={!inputValue.trim()}
                 className="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white p-2 rounded-full transition-colors flex-shrink-0 ml-2"
               >
