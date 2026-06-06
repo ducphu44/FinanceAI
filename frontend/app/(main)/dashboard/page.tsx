@@ -374,7 +374,7 @@ export default function DashboardPage() {
                       <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
                       <XAxis dataKey="month" tick={{ fontSize: 11 }} />
                       <YAxis tick={{ fontSize: 11 }} tickFormatter={v => fmtShort(v)} />
-                      <Tooltip formatter={(v: number) => fmtVND(v)} />
+                      <Tooltip formatter={(v: any) => fmtVND(Number(v))} />
                       <Legend />
                       <Area type="monotone" dataKey="revenue" name="Doanh thu" stroke="#10b981" fill="url(#rev)" strokeWidth={2.5} dot={{ r: 3 }} />
                       <Area type="monotone" dataKey="expense" name="Chi phí" stroke="#ef4444" fill="url(#exp)" strokeWidth={2.5} dot={{ r: 3 }} />
@@ -398,7 +398,7 @@ export default function DashboardPage() {
                       <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
                       <XAxis type="number" tick={{ fontSize: 10 }} tickFormatter={v => fmtShort(v)} />
                       <YAxis type="category" dataKey="dept" tick={{ fontSize: 10 }} width={72} />
-                      <Tooltip formatter={(v: number) => fmtVND(v)} labelFormatter={(l: string) => `Phòng ban: ${l}`} />
+                      <Tooltip formatter={(v: any) => fmtVND(Number(v))} labelFormatter={(l: any) => `Phòng ban: ${l}`} />
                       <Bar dataKey="expense" name="Chi phí" fill="#3b82f6" radius={[0, 4, 4, 0]} />
                     </BarChart>
                   </ResponsiveContainer>
