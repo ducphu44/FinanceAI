@@ -69,66 +69,7 @@ def ask_ai(
     db:           Session = Depends(get_db),
     current_user: User    = Depends(get_current_user),
 ):
-    # Lấy dữ liệu context từ DB
-    context_data = {}
-    q_lower = body.question.lower()
-    
-    from app.models import TransactionType
-    
-    # 1. Lấy dữ liệu over budget
-    over_budget_txns = db.query(FinancialTransaction).filter(
-        FinancialTransaction.variance_percent > 0
-    ).order_by(FinancialTransaction.variance_percent.desc()).limit(10).all()
-    
-    context_data["over_budget"] = [
-        {
-            "department": txn.department,
-            "category": txn.category,
-            "actual_amount": txn.actual_amount,
-            "budget_amount": txn.budget_amount,
-            "variance_percent": txn.variance_percent
-        } for txn in over_budget_txns
-    ]
-    
-    # 2. Lấy dữ liệu chi tiết chi phí
-    expenses_detailed = db.query(
-        FinancialTransaction.department,
-        FinancialTransaction.category,
-        func.sum(FinancialTransaction.actual_amount).label("total_amount")
-    ).filter(
-        FinancialTransaction.transaction_type == TransactionType.expense
-    ).group_by(FinancialTransaction.department, FinancialTransaction.category).all()
-    
-    context_data["expenses_detailed"] = [
-        {"department": e.department, "category": e.category, "amount": e.total_amount} for e in expenses_detailed
-    ]
-    
-    # 3. Lấy dữ liệu chi tiết doanh thu
-    revenues_detailed = db.query(
-        FinancialTransaction.department,
-        FinancialTransaction.category,
-        func.sum(FinancialTransaction.actual_amount).label("total_amount")
-    ).filter(
-        FinancialTransaction.transaction_type == TransactionType.revenue
-    ).group_by(FinancialTransaction.department, FinancialTransaction.category).all()
-    
-    context_data["revenues_detailed"] = [
-        {"department": e.department, "category": e.category, "amount": e.total_amount} for e in revenues_detailed
-    ]
-    
-    # 4. Lấy dữ liệu tóm tắt tổng quan
-    total_expense = db.query(func.sum(FinancialTransaction.actual_amount)).filter(FinancialTransaction.transaction_type == TransactionType.expense).scalar() or 0
-    total_revenue = db.query(func.sum(FinancialTransaction.actual_amount)).filter(FinancialTransaction.transaction_type == TransactionType.revenue).scalar() or 0
-    total_budget = db.query(func.sum(FinancialTransaction.budget_amount)).filter(FinancialTransaction.transaction_type == TransactionType.expense).scalar() or 1
-    
-    context_data["summary"] = {
-        "total_revenue": total_revenue,
-        "total_expense": total_expense,
-        "total_budget": total_budget,
-        "usage_percent": round((total_expense / total_budget) * 100, 2) if total_budget > 0 else 0
-    }
-
-    answer = ask_question(body.question, context_data)
+    answer = ask_question(body.question, db)
 
     # Persist to ai_queries table
     record = AIQuery(
