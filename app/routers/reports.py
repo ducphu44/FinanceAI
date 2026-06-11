@@ -88,3 +88,22 @@ def reject_report(
     report.approved_at = None
     db.commit()
     return MessageResponse(message=f"Report {report_id} rejected and reverted to draft")
+
+
+@router.post("/{report_id}/submit", response_model=ReportResponse,
+             summary="Submit a report for review (staff to manager/leader)")
+def submit_report(
+    report_id:    int,
+    db:           Session = Depends(get_db),
+    current_user: User    = Depends(get_current_user),
+):
+    report = db.query(Report).filter(Report.id == report_id).first()
+    if not report:
+        raise HTTPException(status_code=404, detail="Report not found")
+    if report.status != ReportStatus.draft:
+        raise HTTPException(status_code=400, detail="Only draft reports can be submitted for review")
+
+    report.status      = ReportStatus.reviewed
+    report.reviewed_by = current_user.id
+    db.commit(); db.refresh(report)
+    return ReportResponse.model_validate(report)

@@ -279,7 +279,14 @@ def generate_report(period: str, report_type: str, context_data: dict) -> str:
         "NGUYÊN TẮC BẮT BUỘC:\n"
         "1. KHÔNG tự bịa số liệu.\n"
         "2. Sử dụng định dạng Markdown cho báo cáo.\n"
-        "3. Cấu trúc báo cáo bắt buộc phải gồm các phần: Tóm tắt tổng quan, Tình hình thu chi, Tình hình sử dụng ngân sách, Các khoản vượt ngân sách, Biến động bất thường, Điểm cần lãnh đạo lưu ý.\n"
+        "3. Cấu trúc báo cáo bắt buộc phải gồm chính xác 7 phần sau đây:\n"
+        "   - # Tóm tắt tình hình tài chính\n"
+        "   - # Các chỉ số chính\n"
+        "   - # Nhận xét về xu hướng thu chi\n"
+        "   - # Các khoản vượt ngân sách\n"
+        "   - # Các biến động bất thường\n"
+        "   - # Đề xuất các điểm cần kiểm tra\n"
+        "   - # Ghi chú kiểm chứng (Ví dụ: 'Báo cáo này được tạo tự động và cần được người phụ trách kiểm chứng trước khi sử dụng chính thức.')\n"
         "4. Ở cuối báo cáo, luôn thêm: '_Báo cáo do AI hỗ trợ, cần kiểm tra trước khi sử dụng chính thức._'"
     )
     
@@ -302,41 +309,42 @@ def generate_report(period: str, report_type: str, context_data: dict) -> str:
         return _mock_generate_report(period, report_type, context_data)
 
 def _mock_generate_report(period: str, report_type: str, context_data: dict, error: str = None) -> str:
-    """Mock tạo báo cáo"""
+    """Mock tạo báo cáo với 7 phần quy định"""
     summary = context_data.get("summary", {})
     over_budget = context_data.get("over_budget", [])
     
     content = (
-        f"# Báo cáo Tài chính – {period}\n\n"
-        f"**Loại báo cáo:** {report_type}\n\n"
+        f"# Tóm tắt tình hình tài chính\n"
+        f"Báo cáo tài chính cho kỳ **{period}** ({report_type}). Dữ liệu ghi nhận tình hình hoạt động tổng quan bám sát kế hoạch đề ra, tuy nhiên vẫn tồn tại một số phòng ban có chi phí phát sinh ngoài ngân sách dự toán.\n\n"
         
-        "## Tóm tắt tổng quan\n"
-        f"- Tổng thu: **{summary.get('total_revenue', 'N/A')}**\n"
-        f"- Tổng chi: **{summary.get('total_expense', 'N/A')}**\n"
-        f"- Tỷ lệ sử dụng ngân sách: **{summary.get('usage_percent', 'N/A')}%**\n\n"
+        "# Các chỉ số chính\n"
+        f"- Tổng doanh thu: **{summary.get('total_revenue', 0):,.2f}**\n"
+        f"- Tổng chi phí: **{summary.get('total_expense', 0):,.2f}**\n"
+        f"- Tổng ngân sách: **{summary.get('total_budget', 0):,.2f}**\n"
+        f"- Tỷ lệ sử dụng ngân sách: **{summary.get('usage_percent', 0)}%**\n\n"
         
-        "## Tình hình thu chi\n"
-        "Dữ liệu thu chi trong kỳ đang bám sát dự toán. Tổng chi phí chiếm phần lớn từ các phòng ban chủ chốt.\n\n"
+        "# Nhận xét về xu hướng thu chi\n"
+        "Dòng tiền chi tiêu tập trung chủ yếu vào các phòng ban học thuật và nghiên cứu. Dòng tiền thu về ổn định nhưng cần tối ưu hóa hiệu suất sử dụng ngân sách thiết bị để tránh lãng phí.\n\n"
         
-        "## Tình hình sử dụng ngân sách\n"
-        "Hầu hết các phòng ban đều trong hạn mức cho phép. Tuy nhiên có một số điểm cần lưu ý.\n\n"
-        
-        "## Các khoản vượt ngân sách\n"
+        "# Các khoản vượt ngân sách\n"
     )
     
     if over_budget:
         for ob in over_budget:
-            content += f"- **{ob.get('department')} ({ob.get('category')})**: Thực tế {ob.get('actual_amount')}, Ngân sách {ob.get('budget_amount')} -> Vượt **{ob.get('variance_percent')}%**\n"
+            content += f"- **{ob.get('department')} ({ob.get('category')})**: Thực tế {ob.get('actual_amount'):,.2f}, Ngân sách {ob.get('budget_amount'):,.2f} -> Vượt **{ob.get('variance_percent')}%**\n"
     else:
         content += "Không ghi nhận khoản nào vượt ngân sách đáng kể.\n"
         
     content += (
-        "\n## Biến động bất thường\n"
-        "Chưa phát hiện biến động bất thường lớn dựa trên dữ liệu hiện tại.\n\n"
+        "\n# Các biến động bất thường\n"
+        "Chưa phát hiện biến động bất thường lớn ngoài các khoản vượt ngân sách của một số phòng ban trọng điểm.\n\n"
         
-        "## Điểm cần lãnh đạo lưu ý\n"
-        "1. Theo dõi sát sao các khoản mục đang tiệm cận ngân sách giới hạn.\n"
-        "2. Đánh giá lại ngân sách dự kiến cho kỳ tiếp theo dựa trên tỷ lệ thực tế.\n\n"
+        "# Đề xuất các điểm cần kiểm tra\n"
+        "1. Kiểm tra lại chứng từ mua sắm trang thiết bị của các phòng ban vượt ngân sách trên 15%.\n"
+        "2. Rà soát lại ngân sách dự phòng cho kỳ tiếp theo.\n\n"
+        
+        "# Ghi chú kiểm chứng\n"
+        "Báo cáo này được tạo bởi AI trợ lý ảo và cần được người phụ trách kiểm chứng trước khi sử dụng chính thức.\n\n"
         
         "_Báo cáo do AI hỗ trợ, cần kiểm tra trước khi sử dụng chính thức._"
     )
