@@ -1,6 +1,18 @@
-# Financial Management System
+# FinanceAI – Hệ thống Quản lý Tài chính Đại học
 
-Hệ thống quản lý tài chính với SQLite, SQLAlchemy và Python.
+Hệ thống quản lý tài chính gồm **backend FastAPI** (Python) và **frontend Next.js** (React + Recharts), tích hợp **AI Agent** hỗ trợ hỏi đáp và sinh báo cáo tài chính.
+
+---
+
+## ✨ Tính năng chính
+
+- **Xác thực & phân quyền**: đăng nhập JWT, 4 vai trò (`admin`, `finance_staff`, `finance_manager`, `leader`).
+- **Upload dữ liệu**: nhập file CSV/XLSX giao dịch tài chính (pandas + openpyxl), tự động tính chênh lệch ngân sách và sinh cảnh báo.
+- **Dashboard**: KPI tổng hợp, xu hướng thu chi theo tháng, chi phí theo phòng ban, danh sách vượt ngân sách — hiển thị bằng biểu đồ **Recharts** trên frontend.
+- **Cảnh báo tài chính**: phát hiện vượt ngân sách / chi tiêu bất thường, xử lý trạng thái (resolve / ignore).
+- **AI Assistant + Chatbot widget**: AI Agent dùng **OpenAI Function Calling** (`gpt-4o-mini`) — tự động gọi các tool truy vấn SQL (giao dịch vượt ngân sách, chi phí/doanh thu theo phòng ban, KPI tổng hợp) để trả lời từ dữ liệu thật, không bịa số liệu. Khi chưa cấu hình `OPENAI_API_KEY`, hệ thống fallback sang chế độ mock.
+- **Báo cáo tài chính**: AI sinh báo cáo nháp dạng Markdown theo cấu trúc 7 phần; quy trình duyệt `draft → submit → approve/reject`. Trang báo cáo hiển thị dashboard trực quan (biểu đồ, chỉ số) và hỗ trợ **xuất file Markdown** hoặc **in / lưu PDF**.
+- **Quản lý người dùng**: CRUD user theo quyền admin.
 
 ---
 
@@ -8,81 +20,72 @@ Hệ thống quản lý tài chính với SQLite, SQLAlchemy và Python.
 
 ```
 .
+├── main.py                # Entry point FastAPI (tự khởi tạo DB + seed khi start)
+├── requirements.txt       # Dependencies backend
 ├── app/
-│   ├── __init__.py
-│   ├── database.py        # Kết nối database (SQLAlchemy engine + session)
-│   └── models.py          # ORM models (6 bảng)
+│   ├── database.py        # Kết nối DB (SQLite mặc định, PostgreSQL qua DATABASE_URL)
+│   ├── models.py          # ORM models (users, transactions, alerts, reports, ...)
+│   ├── schemas.py         # Pydantic schemas
+│   ├── auth_utils.py      # JWT + bcrypt
+│   ├── dependencies.py    # Auth dependencies (get_current_user, phân quyền)
+│   ├── routers/           # auth, users, files, dashboard, alerts, ai, reports
+│   └── services/          # ai_service (AI Agent + sinh báo cáo), alert_service
+├── frontend/              # Next.js 16 + React 19 + Tailwind CSS 4 + Recharts
+│   ├── app/               # Pages: login, dashboard, upload, reports, alerts,
+│   │                      #        ai-assistant, users
+│   └── components/        # Header, Sidebar, ChatbotWidget
 ├── scripts/
-│   └── init_db.py         # Khởi tạo bảng + seed dữ liệu demo
-├── database/
-│   └── financial.db       # SQLite file (tạo tự động)
-├── sample_data/
-│   ├── financial_sample.csv
-│   └── financial_sample.xlsx
+│   ├── init_db.py         # Khởi tạo bảng + seed dữ liệu demo
+│   └── test_chatbot_agent.py  # Test AI Agent function calling
+├── sample_data/           # File CSV/XLSX mẫu để upload
+├── uploads/               # File người dùng upload (tạo tự động)
 └── docs/
-    └── sample_data_dictionary.md
+    ├── api_endpoints.md          # Tài liệu chi tiết API
+    └── sample_data_dictionary.md # Mô tả cột dữ liệu mẫu
 ```
 
 ---
 
-## ⚙️ Cài đặt môi trường
+## ⚙️ Cài đặt & chạy Backend
+
+Yêu cầu: Python 3.10+
 
 ```bash
-# Bước 1: Tạo virtual environment
+# 1. Tạo và kích hoạt virtual environment
 python3 -m venv venv
+source venv/bin/activate        # Windows: venv\Scripts\activate
 
-# Bước 2: Kích hoạt (macOS / Linux)
-source venv/bin/activate
-# Hoặc Windows:
-# venv\Scripts\activate
+# 2. Cài dependencies
+pip install -r requirements.txt
 
-# Bước 3: Cài đặt dependencies
-venv/bin/pip install sqlalchemy bcrypt pandas openpyxl
+# 3. Chạy server
+uvicorn main:app --reload
 ```
 
-> ✅ **Đã cài đặt thành công:** SQLAlchemy 2.0.50, bcrypt 5.0.0, pandas 3.0.3, openpyxl 3.1.5
+- API chạy tại `http://localhost:8000` — Swagger: `/docs`, ReDoc: `/redoc`, health check: `/health`.
+- **Database tự khởi tạo khi start**: bảng được tạo và seed dữ liệu demo tự động (SQLite tại `database/financial.db`). Có thể chạy thủ công: `python scripts/init_db.py`.
+
+### Biến môi trường (tùy chọn, file `.env`)
+
+| Biến | Mặc định | Mô tả |
+|------|----------|-------|
+| `DATABASE_URL` | SQLite `database/financial.db` | Chuỗi kết nối PostgreSQL khi deploy (hỗ trợ Render, tự đổi `postgres://` → `postgresql://`) |
+| `OPENAI_API_KEY` | _(trống → dùng mock)_ | Bật AI Agent thật (OpenAI function calling) |
+| `SECRET_KEY` | key dev có sẵn | Secret ký JWT — đổi khi production |
 
 ---
 
-## 🗄️ Khởi tạo Database
+## 💻 Chạy Frontend
 
-Chạy lệnh sau từ **thư mục gốc** của dự án:
+Yêu cầu: Node.js 18+
 
 ```bash
-# Nếu đã kích hoạt venv:
-python scripts/init_db.py
-
-# Hoặc dùng trực tiếp venv Python:
-venv/bin/python scripts/init_db.py
+cd frontend
+npm install
+npm run dev
 ```
 
-Lệnh này sẽ:
-1. Tạo file `database/financial.db`
-2. Tạo đầy đủ **6 bảng** trong database
-3. Seed **4 user demo**
-4. Thêm dữ liệu mẫu (file upload, giao dịch, alert, AI query, report)
-
-**Kết quả mong đợi:**
-
-```
-───────────────────────────────────────────────────────
-🔧  Khởi tạo database schema …
-✅  Đã tạo 6 bảng:
-    • ai_queries            (6 cột)
-    • financial_alerts      (9 cột)
-    • financial_transactions (15 cột)
-    • reports               (10 cột)
-    • uploaded_files        (8 cột)
-    • users                 (7 cột)
-
-👤  Seed demo users …
-    ✅  admin@example.com (admin) → id=1
-    ✅  staff@example.com (finance_staff) → id=2
-    ✅  manager@example.com (finance_manager) → id=3
-    ✅  leader@example.com (leader) → id=4
-
-🎉  Khởi tạo database hoàn tất!
-```
+Mở `http://localhost:3000`. Frontend gọi API qua biến `NEXT_PUBLIC_API_URL` (mặc định `http://localhost:8000`).
 
 ---
 
@@ -92,112 +95,38 @@ Lệnh này sẽ:
 |-------|------|-----------|
 | `admin@example.com` | `admin` | Toàn quyền hệ thống |
 | `staff@example.com` | `finance_staff` | Upload file, xem dữ liệu |
-| `manager@example.com` | `finance_manager` | Quản lý báo cáo, duyệt alert |
+| `manager@example.com` | `finance_manager` | Quản lý báo cáo, xử lý cảnh báo |
 | `leader@example.com` | `leader` | Phê duyệt báo cáo |
 
-> **Mật khẩu demo:** `password123`  
-> Mật khẩu được băm bằng **bcrypt** (12 rounds).
+> **Mật khẩu demo:** `password123` (băm bằng bcrypt)
 
 ---
 
-## 🗂️ Database Schema
+## 📡 API chính
 
-### Bảng `users`
-| Cột | Kiểu | Mô tả |
-|-----|------|-------|
-| id | INTEGER PK | Auto-increment |
-| full_name | VARCHAR(150) | Họ tên |
-| email | VARCHAR(255) UNIQUE | Email đăng nhập |
-| password_hash | VARCHAR(255) | Mật khẩu băm bcrypt |
-| role | ENUM | admin / finance_staff / finance_manager / leader |
-| is_active | BOOLEAN | Trạng thái tài khoản |
-| created_at | DATETIME | Thời gian tạo |
+| Nhóm | Prefix | Chức năng |
+|------|--------|-----------|
+| Auth | `/auth` | Login, lấy thông tin user hiện tại |
+| Users | `/users` | CRUD người dùng (admin) |
+| Files | `/files` | Upload CSV/XLSX, danh sách & chi tiết file |
+| Dashboard | `/dashboard` | KPI summary, xu hướng theo tháng, chi phí phòng ban, vượt ngân sách |
+| Alerts | `/alerts` | Tổng hợp, danh sách, phân tích, resolve/ignore cảnh báo |
+| AI | `/ai` | `POST /ai/ask` (hỏi đáp AI Agent), `POST /ai/generate-report` (sinh báo cáo nháp) |
+| Reports | `/reports` | Danh sách, chi tiết, submit, approve, reject báo cáo |
 
-### Bảng `uploaded_files`
-| Cột | Kiểu | Mô tả |
-|-----|------|-------|
-| id | INTEGER PK | Auto-increment |
-| file_name | VARCHAR(255) | Tên file |
-| file_type | VARCHAR(20) | csv / xlsx |
-| uploaded_by | FK → users.id | Người upload |
-| uploaded_at | DATETIME | Thời điểm upload |
-| total_rows | INTEGER | Số dòng dữ liệu |
-| status | ENUM | pending / processing / success / failed |
-| error_message | TEXT | Thông báo lỗi nếu có |
-
-### Bảng `financial_transactions`
-| Cột | Kiểu | Mô tả |
-|-----|------|-------|
-| id | INTEGER PK | Auto-increment |
-| upload_file_id | FK → uploaded_files.id | File nguồn |
-| transaction_id | VARCHAR(50) UNIQUE | Mã giao dịch (TXN-XXXX) |
-| date | DATE | Ngày giao dịch |
-| month | VARCHAR(7) | YYYY-MM |
-| department | VARCHAR(150) | Phòng ban |
-| category | VARCHAR(100) | Khoản mục |
-| transaction_type | ENUM | expense / revenue |
-| budget_amount | FLOAT | Ngân sách |
-| actual_amount | FLOAT | Thực tế |
-| variance_amount | FLOAT | Chênh lệch (actual - budget) |
-| variance_percent | FLOAT | Chênh lệch % |
-| description | TEXT | Mô tả |
-| status | ENUM | active / reviewed / archived |
-| created_at | DATETIME | Thời gian tạo |
-
-### Bảng `financial_alerts`
-| Cột | Kiểu | Mô tả |
-|-----|------|-------|
-| id | INTEGER PK | Auto-increment |
-| transaction_id | FK → financial_transactions.id | Giao dịch liên quan |
-| alert_type | ENUM | over_budget / monthly_spike / unusual_revenue |
-| alert_level | ENUM | info / warning / critical |
-| message | TEXT | Nội dung cảnh báo |
-| status | ENUM | open / resolved / ignored |
-| created_at | DATETIME | Thời gian tạo |
-| resolved_by | FK → users.id | Người giải quyết |
-| resolved_at | DATETIME | Thời gian giải quyết |
-
-### Bảng `ai_queries`
-| Cột | Kiểu | Mô tả |
-|-----|------|-------|
-| id | INTEGER PK | Auto-increment |
-| user_id | FK → users.id | Người dùng |
-| question | TEXT | Câu hỏi |
-| answer | TEXT | Câu trả lời |
-| data_source | VARCHAR(255) | Nguồn dữ liệu |
-| created_at | DATETIME | Thời gian |
-
-### Bảng `reports`
-| Cột | Kiểu | Mô tả |
-|-----|------|-------|
-| id | INTEGER PK | Auto-increment |
-| report_title | VARCHAR(300) | Tiêu đề báo cáo |
-| report_period | VARCHAR(50) | Kỳ báo cáo (2024-03) |
-| report_type | ENUM | monthly / quarterly / annual / custom |
-| content | TEXT | Nội dung báo cáo |
-| status | ENUM | draft / reviewed / approved |
-| created_by | FK → users.id | Người tạo |
-| reviewed_by | FK → users.id | Người review |
-| approved_by | FK → users.id | Người phê duyệt |
-| created_at | DATETIME | Thời gian tạo |
-| approved_at | DATETIME | Thời gian phê duyệt |
+Chi tiết request/response: xem [`docs/api_endpoints.md`](docs/api_endpoints.md).
 
 ---
 
-## 🔍 Kiểm tra database bằng SQLite CLI
+## 🗄️ Database
+
+6 bảng chính: `users`, `uploaded_files`, `financial_transactions`, `financial_alerts`, `ai_queries`, `reports` (chi tiết trong `app/models.py`).
+
+Kiểm tra nhanh với SQLite CLI:
 
 ```bash
 sqlite3 database/financial.db
-
-# Xem danh sách bảng
 .tables
-
-# Xem cấu trúc bảng
-.schema users
-
-# Xem dữ liệu user
 SELECT id, full_name, email, role FROM users;
-
-# Thoát
 .quit
 ```
