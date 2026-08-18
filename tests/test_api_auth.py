@@ -47,23 +47,43 @@ class TestLogin:
         )
         assert res.status_code == 403
 
-    def test_login_unknown_email_falls_back_to_admin(self, client, seed_users):
-        # LƯU Ý: đây là hành vi HIỆN TẠI của app (bug bảo mật – xem mô tả PR):
-        # email không tồn tại sẽ tự động đăng nhập bằng tài khoản admin đầu tiên.
+    def test_login_correct_password_succeeds(self, client, seed_users):
+        res = client.post(
+            "/auth/login",
+            json={"email": "admin@test.com", "password": TEST_PASSWORD},
+        )
+        assert res.status_code == 200
+        body = res.json()
+        assert body["access_token"]
+        assert body["user"]["email"] == "admin@test.com"
+
+    def test_login_wrong_password_unauthorized(self, client, seed_users):
+        res = client.post(
+            "/auth/login",
+            json={"email": "admin@test.com", "password": "sai-mat-khau"},
+        )
+        assert res.status_code == 401
+
+    def test_login_unknown_email_unauthorized(self, client, seed_users):
+        # Email không tồn tại phải trả 401, không được fallback về admin
         res = client.post(
             "/auth/login",
             json={"email": "khongtontai@test.com", "password": "buanhap"},
         )
-        assert res.status_code == 200
-        assert res.json()["user"]["role"] == "admin"
+        assert res.status_code == 401
 
-    def test_login_unknown_email_without_admin_returns_404(self, client):
-        # DB rỗng, không có admin để fallback
-        res = client.post(
+    def test_login_error_message_does_not_leak_email_existence(self, client, seed_users):
+        # Sai mật khẩu và email lạ phải trả về cùng một thông báo lỗi
+        wrong_pw = client.post(
+            "/auth/login",
+            json={"email": "admin@test.com", "password": "sai-mat-khau"},
+        )
+        unknown = client.post(
             "/auth/login",
             json={"email": "khongtontai@test.com", "password": "x"},
         )
-        assert res.status_code == 404
+        assert wrong_pw.status_code == unknown.status_code == 401
+        assert wrong_pw.json()["detail"] == unknown.json()["detail"]
 
     def test_login_missing_fields_returns_422(self, client):
         res = client.post("/auth/login", json={"email": "a@b.com"})
